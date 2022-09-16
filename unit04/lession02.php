@@ -53,7 +53,9 @@ foreach($staff as $key => $item) {
             </tr>
         </thead>
         <tbody>
+            <?php $sumMoney = 0; ?>
             <?php foreach($staff as $key => $item): ?>
+                <?php $sumMoney += $item['money']; ?>
                 <tr>
                     <td><?= $item['id'];  ?></td>
                     <td><?= $item['name']; ?></td>
@@ -66,7 +68,7 @@ foreach($staff as $key => $item) {
         <tfoot>
             <tr>
                 <td colspan="4">Tong tien luong</td>
-                <td>3242343</td>
+                <td><?= number_format($sumMoney); ?></td>
             </tr>
         </tfoot>
     </table>
